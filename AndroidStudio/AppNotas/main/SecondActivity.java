@@ -18,19 +18,12 @@ public class SecondActivity extends AppCompatActivity {
     protected TextView label1;
     protected EditText caja1;
     protected Spinner sp1;
-    protected Button boton1;
-    protected Button boton2;
-
+    protected Button boton1, boton2;
     protected BaseDatosSQLite db;
-
-
     private Intent pasarPantalla;
     private Bundle extras;
-    private String paquete1;
-    private String paquete2;
-    private String paquete3;
+    private String paquete1, paquete2, paquete3;
     private String contenidoCaja1="";
-
     private ArrayList<String> prioridades = new ArrayList<String>();
     private ArrayAdapter<String> adaptadorSP;
     private int prioridadSeleccionada = -1;
@@ -45,16 +38,17 @@ public class SecondActivity extends AppCompatActivity {
         boton1 = (Button) findViewById(R.id.boton1_second);
         boton2 = (Button) findViewById(R.id.boton2_second);
 
+        //Si existen, pasamos datos a la siguiente pantalla
         extras = getIntent().getExtras();
         if (extras != null) {
-            db = new BaseDatosSQLite(this);
 
+            //Llamada a la BBDD
+            db = new BaseDatosSQLite(this);
             paquete1=extras.getString("ID");
             paquete2=extras.getString("PRIORITY");
             paquete3=extras.getString("TITLE");
-
             caja1.setText(paquete3);
-
+            
             prioridades.add("Muy alta");
             prioridades.add("Alta");
             prioridades.add("Media");
@@ -77,6 +71,7 @@ public class SecondActivity extends AppCompatActivity {
                 }
             });
 
+            //Crear notas y pasamos a la pantalla del inicio
             boton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -97,6 +92,8 @@ public class SecondActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No se han recibido paquetes", Toast.LENGTH_SHORT).show();
         }
+
+        //Volver a la pantalla principal
         boton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
