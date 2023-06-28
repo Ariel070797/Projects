@@ -3,6 +3,7 @@ public class Note {
     protected String title;
     protected int priority;
 
+    //Las propiedades de las notas
     public Note (int id, String title, int priority){
         this.id=id;
         this.title=title;
