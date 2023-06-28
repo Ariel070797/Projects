@@ -27,7 +27,7 @@ public class Start {
 	private String signo = "";
 	private String contenidoCaja1 = "";
 	private float resultado = 0.0f;
-	private int numero1, numero2 = 0;
+	private float numero1, numero2 = 0.0f;
 
 	/**
 	 * Launch the application.
@@ -230,7 +230,7 @@ public class Start {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					contenidoCaja1 = caja1.getText().toString();
-					numero1 = Integer.parseInt(contenidoCaja1);
+					numero1 = Float.parseFloat(contenidoCaja1);
 					caja1.setText("");
 					etiqueta1.setText(numero1 + "+");
 					contenidoCaja1 = "";
@@ -268,7 +268,7 @@ public class Start {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					contenidoCaja1 = caja1.getText().toString();
-					numero1 = Integer.parseInt(contenidoCaja1);
+					numero1 = Float.parseFloat(contenidoCaja1);
 					caja1.setText("");
 					etiqueta1.setText(numero1 + "-");
 					contenidoCaja1 = "";
@@ -306,7 +306,7 @@ public class Start {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					contenidoCaja1 = caja1.getText().toString();
-					numero1 = Integer.parseInt(contenidoCaja1);
+					numero1 = Float.parseFloat(contenidoCaja1);
 					caja1.setText("");
 					etiqueta1.setText(numero1 + "÷");
 					contenidoCaja1 = "";
@@ -344,7 +344,7 @@ public class Start {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					contenidoCaja1 = caja1.getText().toString();
-					numero1 = Integer.parseInt(contenidoCaja1);
+					numero1 = Float.parseFloat(contenidoCaja1);
 					caja1.setText("");
 					etiqueta1.setText(numero1 + "x");
 					contenidoCaja1 = "";
@@ -549,7 +549,7 @@ public class Start {
 				caja1.setText("");
 				numero1 = 0;
 				numero2 = 0;
-				resultado = 0.0f;
+				resultado = 0;
 				etiqueta1.setText("");
 				contenidoCaja1 = "";
 
