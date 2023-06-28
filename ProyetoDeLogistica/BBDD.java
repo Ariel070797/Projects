@@ -1,11 +1,6 @@
-package plaingest2;
-
-
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 import javax.swing.JOptionPane;
-
 import com.mysql.jdbc.Connection;
 
 public class BBDD {
@@ -14,7 +9,7 @@ public class BBDD {
 
 	protected static String servidor = "localhost";
 	protected static String usuario = "root";
-	protected static String nombreBD = "plaingest?useServerPrepStmts=true";
+	protected static String nombreBD = "nombreEmpresa?useServerPrepStmts=true";
 	protected static String pass = "";
 	protected static Connection conexion;
 
