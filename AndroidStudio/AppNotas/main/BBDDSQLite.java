@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+//Creamos la clase de BBDD
 public class BaseDatosSQLite extends SQLiteOpenHelper {
 
     protected SQLiteDatabase db;
@@ -46,6 +47,7 @@ public class BaseDatosSQLite extends SQLiteOpenHelper {
         db.execSQL("UPDATE notes SET title='" + title + "', priority=" + priority + "  WHERE id=" + id);
     }
 
+    //Numero de notas
     public int numberOfNotes() {
         int num = 0;
         db = this.getReadableDatabase();
@@ -53,6 +55,7 @@ public class BaseDatosSQLite extends SQLiteOpenHelper {
         return num;
     }
 
+    //Obtener todas las notas de la BBDD
     public ArrayList<String> getAllNotes() {
         ArrayList<String> filas = new ArrayList<String>();
         Cursor res = null;
@@ -70,6 +73,7 @@ public class BaseDatosSQLite extends SQLiteOpenHelper {
         return filas;
     }
 
+    //Obtenemos una nota para los detalles
     public Note getNote(int id) {
 
         Note n = null;
@@ -92,7 +96,7 @@ public class BaseDatosSQLite extends SQLiteOpenHelper {
         return n;
     }
 
-
+    //Cerrar la BBDD
     public void close() {
         db.close();
     }
